@@ -1,0 +1,17 @@
+{
+    "contents" : "makeVector <- function(x = numeric()) {\n  m <- NULL\n  set <- function(y) {\n    x <<- y\n    m <<- NULL\n  }\n  get <- function() x\n  setmean <- function(mean) m <<- mean\n  getmean <- function() m\n  list(set = set, get = get,\n       setmean = setmean,\n       getmean = getmean)\n}\n\ncachemean <- function(x, ...) {\n  m <- x$getmean()\n  if(!is.null(m)) {\n    message(\"getting cached data\")\n    return(m)\n  }\n  data <- x$get()\n  m <- mean(data, ...)\n  x$setmean(m)\n  m\n}",
+    "created" : 1429698154910.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1827845341",
+    "id" : "F0674892",
+    "lastKnownWriteTime" : 1429698241,
+    "path" : "C:/Users/AICEnricoF/git/assigments02/cacheVector.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
